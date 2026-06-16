@@ -7,6 +7,7 @@ pkg_check_modules(LIBUSB REQUIRED libusb-1.0)
 cmake_print_variables(LIBUSB_LIBRARIES LIBUSB_INCLUDE_DIRS LIBUSB_LINK_LIBRARIES)
 
 add_executable(listdevs listdevs.c)
+add_executable(testcom test_com.c)
 
 target_include_directories(listdevs PRIVATE 
     ${LIBUSB_INCLUDE_DIRS}
@@ -14,3 +15,12 @@ target_include_directories(listdevs PRIVATE
 )
 
 target_link_libraries(listdevs PRIVATE ${LIBUSB_LINK_LIBRARIES} )
+
+
+
+target_include_directories(testcom PRIVATE
+    ${LIBUSB_INCLUDE_DIRS}
+    ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+target_link_libraries(testcom PRIVATE ${LIBUSB_LINK_LIBRARIES} )
