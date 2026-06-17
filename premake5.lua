@@ -32,7 +32,7 @@ project "lib_usb_test"
             local triplet = "x64-windows"
             includedirs { vcpkg_root .. "/installed/" .. triplet .. "/include/libusb-1.0/" }
             libdirs     { vcpkg_root .. "/installed/" .. triplet .. "/lib" }
-            links { "usb-1.0", "udev"}
+            links { "libusb-1.0"}
 
         filter "configurations:Debug"
             libdirs { vcpkg_root .. "/installed/" .. triplet .. "/debug/lib" }
