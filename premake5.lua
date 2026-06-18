@@ -29,7 +29,7 @@ project "lib_usb_test"
         -- Adjust triplet folders based on OS ("x64-windows", "x64-linux", "x64-osx")
 
         filter "system:windows"
-            local triplet = "x64-windows"
+            local triplet = "x86-windows-static"
             includedirs { vcpkg_root .. "/installed/" .. triplet .. "/include/libusb-1.0/" }
             libdirs     { vcpkg_root .. "/installed/" .. triplet .. "/lib" }
             links { "libusb-1.0"}
